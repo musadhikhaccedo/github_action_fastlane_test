@@ -16,12 +16,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Fastlane
+      - name: archive build
+        env:
+          KEYCHAIN_NAME: ${{ vars.KEYCHAIN_NAME }}
+          KEYCHAIN_PASSWORD: ${{ vars.KEYCHAIN_PASSWORD }}
+          BUILD_BUNDLE_IDENTIFIER: com.mus.GithubActionFastLaneTest
+          BUILD_OUTPUT_NAME: build
+          PLATFORM: ios
+          MATCH_DISTRIBUTION_TYPE: ${{ vars.MATCH_DISTRIBUTION_TYPE }}
+          MATCH_GIT_BRANCH: ${{ vars.MATCH_GIT_BRANCH }}
+          MATCH_GIT_URL: ${{ vars.MATCH_GIT_URL }}
+          BUILD_SCHEME: GithubActionFastLaneTest
+          
         run: |
           cd GithubActionFastLaneTest
-          bundle config set --local path 'vendor/cache'
-          echo bundle path set
-          bundle install
-          echo bundle installed
-          
-  
+          bundle exec fastlane sign --verbose
+          bundle exec fastlane build --verbose
