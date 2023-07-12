@@ -21,6 +21,7 @@ jobs:
           pwd
           cd GithubActionFastLaneTest
           pwd
+          ls
           bundle config set --local path 'vendor/cache'
           bundle install
   
