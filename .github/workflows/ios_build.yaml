@@ -18,10 +18,8 @@ jobs:
 
       - name: Install Fastlane
         run: |
-          pwd
           cd GithubActionFastLaneTest
-          pwd
-          ls
           bundle config set --local path 'vendor/cache'
-          bundle install
+          echo bundle path set
+          bundle  update --bundler
   
