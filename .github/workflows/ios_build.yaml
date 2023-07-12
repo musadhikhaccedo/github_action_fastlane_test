@@ -19,6 +19,7 @@ jobs:
       - name: Install Fastlane
         run: |
           cd GithubActionFastLaneTest
+          gem list bundler
           bundle  update --bundler
           echo bundler updated
           bundle config set --local path 'vendor/cache'
