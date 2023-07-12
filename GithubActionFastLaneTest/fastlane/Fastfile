@@ -14,10 +14,36 @@
 # update_fastlane
 
 default_platform(:ios)
+fastlane_require 'dotenv'
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
+lane sign do
+
+    create_keychain(
+    name:               ENV['KEYCHAIN_NAME'],
+    password:           ENV['KEYCHAIN_PASSWORD'],
+    default_keychain:   false,
+    unlock:             true,
+    timeout:            3600,
+    lock_when_sleeps:   true
+  )
+  
+  match(
+    git_url:            ENV['MATCH_GIT_URL'],
+    git_branch:         ENV['MATCH_GIT_BRANCH'],
+    keychain_name:      ENV['KEYCHAIN_NAME'],
+    keychain_password:  ENV['KEYCHAIN_PASSWORD'],
+    type:               ENV['MATCH_DISTRIBUTION_TYPE'],
+    readonly:           true,
+    platform:           ENV['PLATFORM'],
+    app_identifier:     ENV['BUILD_BUNDLE_IDENTIFIER']
+  )
+end
+
+lane :build do
+  build_app(
+    clean:          false,
+    scheme:         ENV['BUILD_SCHEME'],
+    output_name:    ENV['BUILD_OUTPUT_NAME'],
+    configuration:  'Release',
+  )
 end
