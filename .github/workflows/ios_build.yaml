@@ -1,0 +1,26 @@
+name: iOS build work flow
+
+on:
+  push:
+    branches: [ "develop" ]
+
+  workflow_dispatch:
+
+jobs:
+  job-setup:
+
+    name: setup and test
+    runs-on: [self-hosted, macmini-home]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Fastlane
+        run: |
+          echo pwd
+          cd GithubActionFastLaneTest
+          echo pwd
+          bundle config set --local path 'vendor/cache'
+          bundle install
+  
