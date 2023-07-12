@@ -19,6 +19,7 @@
 		863F867E2A5E58D60031BECF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		863F86802A5E58D80031BECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863F86832A5E58D80031BECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		863F868A2A5E68300031BECF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 			children = (
 				863F867C2A5E58D60031BECF /* GithubActionFastLaneTestApp.swift */,
 				863F867E2A5E58D60031BECF /* ContentView.swift */,
+				863F868A2A5E68300031BECF /* README.md */,
 				863F86802A5E58D80031BECF /* Assets.xcassets */,
 				863F86822A5E58D80031BECF /* Preview Content */,
 			);
