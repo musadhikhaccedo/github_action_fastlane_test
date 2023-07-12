@@ -27,7 +27,7 @@ jobs:
           MATCH_GIT_BRANCH: ${{ vars.MATCH_GIT_BRANCH }}
           MATCH_GIT_URL: ${{ vars.MATCH_GIT_URL }}
           BUILD_SCHEME: GithubActionFastLaneTest
-          MATCH_PASSWORD: 12345
+          MATCH_PASSWORD: 1234
           
         run: |
           cd GithubActionFastLaneTest
