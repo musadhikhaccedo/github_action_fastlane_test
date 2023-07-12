@@ -30,5 +30,7 @@ jobs:
           
         run: |
           cd GithubActionFastLaneTest
+          bundle config set --local path 'vendor/cache'
+          bundle install
           bundle exec fastlane sign --verbose
           bundle exec fastlane build --verbose
