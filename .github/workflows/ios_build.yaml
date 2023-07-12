@@ -21,5 +21,7 @@ jobs:
           cd GithubActionFastLaneTest
           bundle config set --local path 'vendor/cache'
           echo bundle path set
+          bundle install
+          echo bundle installed
           
   
