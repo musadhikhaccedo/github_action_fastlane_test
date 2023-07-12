@@ -20,7 +20,7 @@ jobs:
         run: |
           cd GithubActionFastLaneTest
           gem list bundler
-          gem install bundler
+          brew install bundler
           echo gem installed new bundler
           bundle config set --local path 'vendor/cache'
           echo bundle path set
