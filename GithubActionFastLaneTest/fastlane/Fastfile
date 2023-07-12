@@ -16,7 +16,7 @@
 default_platform(:ios)
 fastlane_require 'dotenv'
 
-lane sign do
+lane :sign do
 
     create_keychain(
     name:               ENV['KEYCHAIN_NAME'],
