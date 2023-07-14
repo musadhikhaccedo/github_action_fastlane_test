@@ -45,5 +45,6 @@ lane :build do
     scheme:         ENV['BUILD_SCHEME'],
     output_name:    ENV['BUILD_OUTPUT_NAME'],
     configuration:  'Release',
+    export_method: 'ad-hoc'
   )
 end
